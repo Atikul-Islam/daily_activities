@@ -1,12 +1,13 @@
 import './App.css';
-import Exercise from './components/Exercise/Exercise';
+import Exercises from './components/Exercises/Exercises';
+import Exercise from './components/Exercises/Exercises';
 import Header from './components/Header/Header';
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Exercise></Exercise>
+      <Exercises></Exercises>
     </div>
   );
 }
