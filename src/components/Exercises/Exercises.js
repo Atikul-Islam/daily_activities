@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Exercises.css'
 import logo from './atik.png'
 import Exercise from '../Exercise/Exercise';
 
 const Exercises = () => {
-    const exercises = [
-        {id:1, name:'Push Up', time:'30m', description:'Push Up is a common calisthenics exercise beginning from the prone position. By raising and lowering the body using the arms, push-ups exercise the pectoral muscles, triceps.', pic:'https://image.shutterstock.com/image-photo/fitness-sport-training-concept-indian-600w-1428376937.jpg'},
-        {id:2, name:'Squats', time:'40m', description:'Squats burn calories and might help you lose weight. They also lower your chances of injuring your knees and ankles.', pic:'https://image.shutterstock.com/image-vector/exercise-guide-by-woman-doing-600w-1303854643.jpg'},
-        {id:3, name:'Plank', time:'20m', description:'The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.', pic:'https://image.shutterstock.com/image-photo/sport-fitness-healthy-lifestyle-concept-600w-1418433089.jpg'},
-        {id:4, name:'Ab crunches', time:'30m', description:'The crunch is an abdominal exercise that works the rectus abdominis muscle.[1] It enables both building "six-pack" abs and tightening the belly.', pic:'https://image.shutterstock.com/image-photo/muscular-man-doing-twist-abs-600w-1713212134.jpg'},
-        {id:5, name:'Side Bends', time:'50m', description:'Side bend or Side bending , translated as side bend , is an exercise used in many activities with weights.', pic:'https://image.shutterstock.com/image-photo/sporty-young-man-training-gym-600w-1579727410.jpg'},
-        {id:6, name:'Sprinting', time:'10m', description:'Sprinting is running over a short distance at the top-most speed of the body in a limited period of time. It is used in many sports that incorporate running, typically as a way of quickly reaching a target or goal...', pic:'https://image.shutterstock.com/image-photo/istanbul-turkey-february-06-2021-600w-1916129968.jpg'},
-    ]
+    const [exercises,setExercises] = useState([]);
 
+    useEffect( () => {
+        fetch('data.json')
+        .then(res=> res.json())
+        .then(data=>setExercises(data))
+    }, [])
     return (
         <div className='main-body'>
             
@@ -44,10 +42,10 @@ const Exercises = () => {
                 <div>
                     <h2>Add A Break</h2>
                     <div className='break-container'>
-                    <h3 className='b-time'>10m</h3>
-                    <h3 className='b-time'>20m</h3>
-                    <h3 className='b-time'>30m</h3>
-                    <h3 className='b-time'>40m</h3>
+                    <button className='b-time'>10m</button>
+                    <button className='b-time'>20m</button>
+                    <button className='b-time'>30m</button>
+                    <button className='b-time'>40m</button>
                     </div>
                 </div>
                 <div>
