@@ -1,7 +1,28 @@
+.exercise-card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+}
 .exercise-card img{
     width: 100%;
+    border-radius: 20px;
 }
 
 .exercise-card p{
     height: 100px;
+}
+
+.exercise-card button{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+}
+
+.exercise-card button:hover{
+    background-color: blueviolet;
 }
