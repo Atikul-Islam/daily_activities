@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './atik.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Details = ({details}) => {
+
+    const [breakTime,setBreakTime] = useState(0);
+
+
 
     const showToast = () =>{
         toast.success("Congratulations! Your activity completed", {
@@ -29,17 +33,18 @@ const Details = ({details}) => {
                 <div>
                     <h2>Add A Break</h2>
                     <div className='break-container'>
-                    <button className='b-time'>10m</button>
-                    <button className='b-time'>20m</button>
-                    <button className='b-time'>30m</button>
-                    <button className='b-time'>40m</button>
+                        <button onClick={(e) => setBreakTime(e.target.innerText)} className='b-time'>10m</button>
+                        <button onClick={(e) => setBreakTime(e.target.innerText)} className='b-time'>20m</button>
+                        <button onClick={(e) => setBreakTime(e.target.innerText)} className='b-time'>30m</button>
+                        <button onClick={(e) => setBreakTime(e.target.innerText)} className='b-time'>40m</button>
+                        
                     </div>
                 </div>
                 <div>
                     <h2>Exercise Details</h2>
                     <div className='time'>
                         <h3 className='ex-time'>Exercise time <span>{totaltime}</span> minutes </h3>
-                        <h3 className='ex-time'>Break time </h3>
+                        <h3 className='ex-time'>Break time:{breakTime} </h3>
                     </div>
                 </div>
                 <div className='complete-btn'>
