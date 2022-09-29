@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import './Exercises.css'
-import logo from './atik.png'
+
 import Exercise from '../Exercise/Exercise';
+import Details from '../Details/Details';
 
 const Exercises = () => {
     const [exercises,setExercises] = useState([]);
+    const [details,setDetails] = useState([]);
 
     useEffect( () => {
         fetch('data.json')
         .then(res=> res.json())
         .then(data=>setExercises(data))
-    }, [])
+    }, []);
+
+    const addToList = (exercise) =>{
+        const newdetails = [...details,exercise];
+        setDetails(newdetails);
+    
+    }
+
     return (
         <div className='main-body'>
             
@@ -18,7 +27,10 @@ const Exercises = () => {
                 <h2>Select Your Exercise</h2>
                 <div className="exercise-container">
                     {
-                        exercises.map(exercise => <Exercise key={exercise.id} exercise ={exercise}></Exercise>)
+                        exercises.map(exercise => <Exercise key={exercise.id}
+                            exercise ={exercise}
+                            addToList={addToList}
+                            ></Exercise>)
                     }
                 </div>
                 <div className='blog'>
@@ -32,32 +44,7 @@ const Exercises = () => {
                 </div>
             </div>
             <div className='profile-container'>
-                <div className="profile">
-                    <img src={logo} alt="" />
-                    <div className='name'>
-                        <h1>Md Atikul Islam</h1>
-                        <p>Dhaka, Bangladesh</p>
-                    </div>
-                </div>
-                <div>
-                    <h2>Add A Break</h2>
-                    <div className='break-container'>
-                    <button className='b-time'>10m</button>
-                    <button className='b-time'>20m</button>
-                    <button className='b-time'>30m</button>
-                    <button className='b-time'>40m</button>
-                    </div>
-                </div>
-                <div>
-                    <h2>Exercise Details</h2>
-                    <div>
-                        <h3 className='ex-time'>Exercise time </h3>
-                        <h3 className='ex-time'>Break time </h3>
-                    </div>
-                </div>
-                <div className='complete-btn'>
-                    <button>Activity Completed</button>
-                </div>
+                <Details details={details}></Details>
             </div>
         </div>
     );
