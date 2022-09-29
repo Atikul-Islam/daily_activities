@@ -1,7 +1,15 @@
 import React from 'react';
 import logo from './atik.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = ({details}) => {
+
+    const showToast = () =>{
+        toast.success("Congratulations! Your activity completed", {
+            position:"top-center"
+        });
+    }
 
     let totaltime = 0;
     for(const time of details){
@@ -35,8 +43,9 @@ const Details = ({details}) => {
                     </div>
                 </div>
                 <div className='complete-btn'>
-                    <button>Activity Completed</button>
+                    <button onClick={showToast}>Activity Completed</button>
                 </div>
+                <ToastContainer />
         </div>
     );
 };
