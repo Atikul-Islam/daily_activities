@@ -1,6 +1,13 @@
 .main-body{
     display: grid;
     grid-template-columns: 4fr 1fr;
+    padding-left: 5%;
+}
+.exercise-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding-right: 2%;
 }
 
 .profile-container{
@@ -69,5 +76,10 @@
         display: grid;
         grid-template-columns: 4fr;
     }
-    
+    .exercise-container{
+        display: grid;
+        grid-template-columns: 4fr;
+        grid-gap: 20px;
+        padding-right: 2%;
+    }
 }
