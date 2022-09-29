@@ -12,7 +12,6 @@
     padding-top: 20px;
     padding-bottom: 30px;
 }
-
 .profile-container{
     position: sticky;
     top: 10px;
@@ -20,70 +19,11 @@
     background-color: white;
   
 }
-.profile{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.profile img{
-
-    height: 150px;
-    border-radius: 50%;
-}
-.name{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.name h1{
-    margin: 0%;
-}
-.name p{
-    margin: 0;
-}
-.break-container{
-    position: sticky;
-    top: 0%;
-    display: flex;
-    justify-content: space-between;
-
-}
-.b-time{
-    background-color: gainsboro;
-    border-radius: 50%;
-    padding: 3%;
-}
-.ex-time{
-    background-color: gainsboro;
-    border-radius: 5px;
-    padding: 5%;
-}
-.complete-btn{
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-.complete-btn button{
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.complete-btn button:hover{
-    background-color: blueviolet;
-}
 
 .blog{
     background-color: white;
     margin-right: 2%;
+    padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 20px;
     border-radius: 20px;
@@ -101,12 +41,16 @@
     .exercise-container{
         display: grid;
         grid-template-columns: 4fr;
-        grid-gap: 20px;
-        padding-right: 5%;
+        margin-right: 5%;
     }
 
     .profile-container{
         padding-right: 5%;
+        margin-right: 5%;
       
+    }
+    .blog{
+        margin-right: 5%;
+        margin-bottom: 20px;
     }
 }

@@ -25,7 +25,7 @@ const Exercises = () => {
             
             <div>
                 <h2>Select Your Exercise</h2>
-                <div className="exercise-container">
+                <div className='exercise-container'>
                     {
                         exercises.map(exercise => <Exercise key={exercise.id}
                             exercise ={exercise}

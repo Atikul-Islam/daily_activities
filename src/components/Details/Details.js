@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from './atik.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Details.css'
 
 const Details = ({details}) => {
 
