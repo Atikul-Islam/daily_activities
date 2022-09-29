@@ -23,8 +23,14 @@ const Exercises = () => {
                         exercises.map(exercise => <Exercise key={exercise.id} exercise ={exercise}></Exercise>)
                     }
                 </div>
-                <div>
-                    
+                <div className='blog'>
+                    <h1>Blog</h1>
+                   <h3>How react works?</h3>
+                   <p>answer:</p>
+                   <h3>What is the difference between props and state?</h3>
+                   <p>answer:</p>
+                   <h3>What is the uses of useEffect without data load?</h3>
+                   <p>answer</p>
                 </div>
             </div>
             <div className='profile-container'>
