@@ -7,7 +7,15 @@ const Details = ({details}) => {
 
     const [breakTime,setBreakTime] = useState(0);
 
-
+    useEffect( () =>{
+        if(breakTime){
+            localStorage.setItem('break',breakTime)
+        }
+        else{
+            const saveData = localStorage.getItem('break')
+            setBreakTime(saveData)
+        }
+    },[breakTime])
 
     const showToast = () =>{
         toast.success("Congratulations! Your activity completed", {
